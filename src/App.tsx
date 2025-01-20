@@ -1,14 +1,16 @@
 import styled from "styled-components";
+import { motion } from "motion/react";
 
 const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   display: flex;
   justify-content: center;
+  border-radius: 15px;
   align-items: center;
 `;
 
-const Box = styled.div`
+const Box = styled(motion.div)`
   width: 200px;
   height: 200px;
   background-color: white;
@@ -19,7 +21,12 @@ const Box = styled.div`
 function App() {
   return (
     <Wrapper>
-      <Box />
+      <Box
+        transition={{ type: "spring", stiffness: 10 }}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1, rotateZ: 360 }}
+      />
+      kk
     </Wrapper>
   );
 }
